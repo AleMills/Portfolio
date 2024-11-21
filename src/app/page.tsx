@@ -50,7 +50,7 @@ export default function Home() {
     {
       title: "E-commerce Platform",
       description:
-        "A full-stack e-commerce solution built with React, TypeScript, and MongoDB.",
+        "Una solución de comercio electrónico completa creada con React, TypeScript y MongoDB.",
       technologies: ["React", "TypeScript", "MongoDB", "Node.js", "Express"],
       link: "#",
     },
@@ -69,9 +69,9 @@ export default function Home() {
       link: "https://appturnos-sable.vercel.app/",
     },
     {
-      title: "Weather Dashboard",
+      title: "Panel de control meteorológico",
       description:
-        "Real-time weather dashboard integrating multiple APIs and data visualization.",
+        "Panel de control meteorológico en tiempo real que integra múltiples API y visualización de datos",
       technologies: ["React", "TypeScript", "Chart.js", "OpenWeatherMap API"],
       link: "#",
     },
