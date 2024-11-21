@@ -1,7 +1,7 @@
 import Nav from "./components/Nav";
 
 import { Image } from "@nextui-org/image";
-import profile from "@/app/asset/profile.jpg";
+
 
 //Importacion de iconos
 import { FaJs, FaNodeJs, FaReact, FaGitAlt } from "react-icons/fa6";
