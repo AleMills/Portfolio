@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import { Switch } from "@nextui-org/switch";
 
