@@ -1,6 +1,11 @@
+"use client"
 import Nav from "./components/Nav";
+import { useRef, useEffect } from "react";
 
 import { Image } from "@nextui-org/image";
+
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 
 //Importacion de iconos
@@ -18,6 +23,24 @@ import { MdMail } from "react-icons/md";
 import Contact from "./components/Contact";
 
 export default function Home() {
+
+  gsap.registerPlugin(useGSAP);
+ 
+
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (boxRef.current) {
+      gsap.to(boxRef.current, {
+        x: 0,
+        duration: 2,
+        rotation: 360,
+        ease: "power2.out",
+      });
+    }
+  }, []);
+
+
   const skills = [
     { name: "JavaScript", icon: <FaJs className="h-6 w-6 text-yellow-400" /> },
     {
@@ -92,7 +115,7 @@ export default function Home() {
           id="about"
           className="mb-12 flex flex-col md:flex-row items-center gap-8 scroll-mt-20"
         >
-          <div className="mt-6 -z-0">
+          <div ref={boxRef} className="mt-6 -z-0">
             <Image
               isBlurred
               width={240}
@@ -119,6 +142,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {skills.map((skill, index) => (
               <div
+              
                 key={index}
                 className="flex items-center space-x-2 bg-white dark:bg-gray-800 hover:scale-105 transition-all p-3 rounded-lg shadow"
               >

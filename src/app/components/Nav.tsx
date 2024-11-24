@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTheme } from "../contexts/ThemeContext";
+import { Switch } from "@nextui-org/switch";
+
 
 //Importacion de iconos
 import { FaXmark, FaMoon } from "react-icons/fa6";
@@ -12,25 +14,26 @@ export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
 
-  
+
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId)
+    const section = document.getElementById(sectionId);
+    
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
+      section.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setIsMenuOpen(false)
+        setIsMenuOpen(false);
       }
-    }
+    };
 
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <nav className=" w-screen mx-auto px-6 py-3 absolute z-10 bg-white dark:bg-gray-800 text-gray-700 dark:text-white">
@@ -54,14 +57,14 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <button onClick={toggleTheme}>
-            {isDarkMode ? (
-              <MdOutlineWbSunny className="text-white h-[1.2rem] w-[1.2rem]" />
-            ) : (
-              <FaMoon className="text-gray-700 h-[1.2rem] w-[1.2rem]" />
-            )}
-            <span className="sr-only">theme</span>
-          </button>
+          <Switch
+            isSelected={isDarkMode}
+            onValueChange={toggleTheme}
+            size="lg"
+            color="primary"
+            startContent={<FaMoon />}
+            endContent={<MdOutlineWbSunny />}
+          ></Switch>
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -78,23 +81,37 @@ export default function Nav() {
         </div>
       </div>
       <div className="transition-all duration-500 ease-in-out">
-      {isMenuOpen && (
-        <div className="md:hidden mt-4 overflow-hidden  max-h-60 opacity-100">
-          <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-            Sobre mi
-          </button>
-          <button onClick={() => scrollToSection('skills')} className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-            Skills
-          </button>
-          <button onClick={() => scrollToSection('projects')} className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-            Proyecto
-          </button>
-          <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-            Contacto
-          </button>
-        </div>
-      )}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 overflow-hidden  max-h-60 opacity-100">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              Sobre mi
+            </button>
+            <button
+              onClick={() => scrollToSection("skills")}
+              className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              Skills
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              Proyecto
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              Contacto
+            </button>
+          </div>
+        )}
       </div>
     </nav>
+
+
   );
 }
