@@ -81,7 +81,7 @@ export default function Home() {
       title: "App Lista de compras",
       description:
         "Lista de compras es una herramienta interactiva y fácil de usar. Permite a los usuarios agregar productos, calcular automáticamente las sumas de los precios y mantener un historial de compras para facilitar el seguimiento de lo adquirido en el pasado.",
-      technologies: ["React", "Tailwind CSS", "NextUI", "IndexedBD"],
+      technologies: ["React", "Typescript", "Tailwind CSS", "NextUI", "IndexedBD"],
       link: "https://shopping-list-eight-weld.vercel.app/",
     },
     {
