@@ -92,11 +92,11 @@ export default function Home() {
       link: "https://appturnos-sable.vercel.app/",
     },
     {
-      title: "Panel de control meteorológico",
+      title: "App del Clima",
       description:
-        "Panel de control meteorológico en tiempo real que integra múltiples API y visualización de datos",
-      technologies: ["React", "TypeScript", "Chart.js", "OpenWeatherMap API"],
-      link: "#",
+        "App del clima que usa una API para proporcionarte datos meteorilogicos",
+      technologies: ["Javascript", "HTML", "CSS", "OpenWeatherMap API"],
+      link: "https://alemills.github.io/clima/",
     },
   ];
 
