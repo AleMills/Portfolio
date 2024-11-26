@@ -157,7 +157,7 @@ export default function Home() {
 
         <section id="projects" className="mb-12 scroll-mt-20">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-            Projectos
+            Proyectos
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
