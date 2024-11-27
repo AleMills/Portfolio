@@ -95,7 +95,7 @@ export default function Home() {
       title: "App del Clima",
       description:
         "App del clima que usa una API para proporcionarte datos meteorilogicos",
-      technologies: ["Javascript", "HTML", "CSS", "OpenWeatherMap API"],
+      technologies: ["Javascript", "HTML", "CSS", "Bootstrap", "OpenWeatherMap API"],
       link: "https://alemills.github.io/clima/",
     },
   ];
