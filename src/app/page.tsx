@@ -88,7 +88,7 @@ export default function Home() {
       title: "Sistema web de Turnos",
       description:
         "La idea de este sistema es que todos aquellos pequeños negocios que ofrezcan servicios puedan ofrocerles a sus clientes la comodidas de auto agendarse citas, abonar los servicios online, notificaciones por whatsapp o email y mucho mas, aunque este en desarrollo puede previsualizar un proyecto al cual le veo mucho futuro",
-      technologies: ["React", "Node JS", "Express", "MongooDB", "Google maps API", "NodeMailer", "JWT", "Google Calendar API", "NextUI", "Tailwind CSS", "Bcrypt"],
+      technologies: ["React", "Node JS", "Express", "MongooDB", "Google maps API", "NodeMailer", "JWT", "Google Calendar API", "NextUI", "Tailwind CSS", "Bcrypt", "Reac Hook Form", "Zod"],
       link: "https://appturnos-sable.vercel.app/",
     },
     {
